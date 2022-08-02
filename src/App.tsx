@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import SearchWeather from "./pages/SearchWeather/SearchWeather"
+import SearchWeather from "./pages/SearchWeather"
 import DailyWeather from "./pages/DailyWeather/DailyWeather"
 import WeeklyWeather from "./pages/WeeklyWeather/WeeklyWeather"
 import "./style.css"
@@ -11,6 +11,7 @@ import LangSelector from "./components/LangSelector"
 function App() {
   return (
     <>
+      <h1 className="visually-hidden"> Previsão do tempo para a sua cidade</h1>
       <Header>
         <TempToggle label={["°F", "°C"]} />
       </Header>

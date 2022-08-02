@@ -5,7 +5,7 @@ footer {
   transform: translateX(-50%);
 }
 
-@media (min-width: 37.5rem) {
+@media (min-width: 48rem) {
   footer {
     bottom: 0.9375rem;
   }

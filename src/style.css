@@ -21,6 +21,7 @@ html {
   background-size: cover;
 }
 
+/* Texto que não aparecem mas ajudam na acessibilidade */
 .visually-hidden {
   position: absolute;
   left: -10000px;
@@ -28,6 +29,23 @@ html {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+/* Mudar a cor do placeholder */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--placeholder-color);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--placeholder-color);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--placeholder-color);
 }
 
 /* Primary font style */

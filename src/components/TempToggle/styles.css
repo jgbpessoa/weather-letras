@@ -57,7 +57,7 @@
   background: var(--toggle-bg-c);
 }
 
-@media (min-width: 37.5rem) {
+@media (min-width: 48rem) {
   .toggle {
     margin-top: 2.6875rem;
     margin-right: 2.5rem;

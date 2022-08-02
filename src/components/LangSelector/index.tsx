@@ -2,7 +2,7 @@ import "./styles.css"
 
 const LangSelector = () => {
   return (
-    <div className="container">
+    <div className="container-lang-selector">
       <div className="flags-container">
         <span>
           <img src="../../assets/brasil-icon.png" alt="Brazilian Flag" />
