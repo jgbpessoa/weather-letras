@@ -5,6 +5,8 @@ import WeeklyWeather from "./pages/WeeklyWeather/WeeklyWeather"
 import "./style.css"
 import Header from "./components/Header"
 import TempToggle from "./components/TempToggle"
+import Footer from "./components/Footer"
+import LangSelector from "./components/LangSelector"
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
           <Route path="/:city/weekly" element={<WeeklyWeather />} />
         </Routes>
       </Router>
+      <Footer>
+        <LangSelector />
+      </Footer>
     </>
   )
 }

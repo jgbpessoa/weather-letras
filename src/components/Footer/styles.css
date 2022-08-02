@@ -1,0 +1,12 @@
+footer {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 37.5rem) {
+  footer {
+    bottom: 0.9375rem;
+  }
+}
