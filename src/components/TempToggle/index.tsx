@@ -1,3 +1,6 @@
+import React, { useContext } from "react"
+import { ConfigContext } from "../../context/configContext"
+import { ConfigContextType } from "../../types/config"
 import "./styles.css"
 
 type Props = {
@@ -5,6 +8,11 @@ type Props = {
 }
 
 const TempToggle: React.FC<Props> = ({ label }) => {
+  const { config, setTemp } = useContext(ConfigContext) as ConfigContextType
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTemp(e.currentTarget.value)
+  }
   return (
     <div>
       <fieldset
@@ -17,8 +25,22 @@ const TempToggle: React.FC<Props> = ({ label }) => {
           {label[0]}
         </label>
         <div className="toggle__wrapper">
-          <input type="radio" name="theme" id="fahrenheit" />
-          <input type="radio" name="theme" id="celsius" />
+          <input
+            type="radio"
+            name="theme"
+            id="fahrenheit"
+            value="F"
+            checked={config.temp === "F"}
+            onChange={handleChange}
+          />
+          <input
+            type="radio"
+            name="theme"
+            id="celsius"
+            value="C"
+            checked={config.temp === "C"}
+            onChange={handleChange}
+          />
           <span aria-hidden="true" className="toggle__background"></span>
           <span aria-hidden="true" className="toggle__button"></span>
         </div>

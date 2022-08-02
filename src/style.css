@@ -21,7 +21,7 @@ html {
   background-size: cover;
 }
 
-/* Texto que não aparecem mas ajudam na acessibilidade */
+/* Textos que não aparecem mas ajudam na acessibilidade */
 .visually-hidden {
   position: absolute;
   left: -10000px;
