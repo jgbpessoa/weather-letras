@@ -1,0 +1,59 @@
+.toggle {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 20px 50px 20px;
+  border: none;
+  margin: 0;
+  align-items: center;
+  justify-content: end;
+  margin-top: 43px;
+  margin-right: 40px;
+}
+
+.toggle label {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--toggle-color);
+  margin-left: 2px;
+}
+
+.toggle__wrapper {
+  position: relative;
+  height: 30px;
+  width: 50px;
+}
+
+.toggle input[type="radio"] {
+  opacity: 0;
+  width: 25px;
+  height: 30px;
+}
+
+.toggle__background {
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  top: 0;
+  border-radius: 20px;
+  background: var(--toggle-bg-f);
+  pointer-events: none;
+}
+.toggle__button {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  right: 100%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--toggle-color);
+  transition: all 150ms ease-in-out;
+}
+.toggle #celsius:checked ~ .toggle__button {
+  left: 25px;
+}
+.toggle #celsius:checked ~ .toggle__background {
+  background: var(--toggle-bg-c);
+}
