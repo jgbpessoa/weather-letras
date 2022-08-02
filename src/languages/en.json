@@ -1,3 +1,5 @@
 {
-  "langSelector": "Selected language: English"
+  "langSelector": "Selected language: English",
+  "searchWeatherTitle": "How is the weather today?",
+  "searchWeatherPlaceholder": "Type the name of your city"
 }
