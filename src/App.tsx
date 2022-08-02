@@ -7,24 +7,27 @@ import Header from "./components/Header"
 import TempToggle from "./components/TempToggle"
 import Footer from "./components/Footer"
 import LangSelector from "./components/LangSelector"
+import ConfigProvider from "./context/configContext"
 
 function App() {
   return (
     <>
-      <h1 className="visually-hidden"> Previsão do tempo para a sua cidade</h1>
-      <Header>
-        <TempToggle label={["°F", "°C"]} />
-      </Header>
-      <Router>
-        <Routes>
-          <Route path="/" element={<SearchWeather />} />
-          <Route path="/:city" element={<DailyWeather />} />
-          <Route path="/:city/weekly" element={<WeeklyWeather />} />
-        </Routes>
-      </Router>
-      <Footer>
-        <LangSelector />
-      </Footer>
+      <ConfigProvider>
+        <h1 className="visually-hidden">Previsão do tempo para a sua cidade</h1>
+        <Header>
+          <TempToggle label={["°F", "°C"]} />
+        </Header>
+        <Router>
+          <Routes>
+            <Route path="/" element={<SearchWeather />} />
+            <Route path="/:city" element={<DailyWeather />} />
+            <Route path="/:city/weekly" element={<WeeklyWeather />} />
+          </Routes>
+        </Router>
+        <Footer>
+          <LangSelector />
+        </Footer>
+      </ConfigProvider>
     </>
   )
 }
