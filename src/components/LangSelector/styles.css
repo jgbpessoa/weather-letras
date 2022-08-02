@@ -5,6 +5,17 @@
   text-align: center;
 }
 
+.flag {
+  background-color: transparent;
+  padding: 0;
+  display: inline-block;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
 .flags-container {
   display: flex;
   justify-content: center;
@@ -13,4 +24,5 @@
 
 .text-container {
   margin-top: 0.1875rem;
+  letter-spacing: 0.029rem;
 }

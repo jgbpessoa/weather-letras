@@ -1,20 +1,31 @@
+import React, { useContext } from "react"
+import { ConfigContext } from "../../context/configContext"
+import { ConfigContextType } from "../../types/config"
 import "./styles.css"
 
 const LangSelector = () => {
+  const { config, setLang } = useContext(ConfigContext) as ConfigContextType
+
+  const handleClick = (e: React.MouseEvent<HTMLSpanElement>) => {
+    setLang(e.currentTarget.id)
+  }
+
   return (
     <div className="container-lang-selector">
       <div className="flags-container">
-        <span>
+        <button className="flag" id="ptBr" onClick={handleClick}>
           <img src="../../assets/brasil-icon.png" alt="Brazilian Flag" />
-        </span>
-        <span>
+        </button>
+        <button className="flag" id="en" onClick={handleClick}>
           <img src="../../assets/usa-icon.png" alt="American Flag" />
-        </span>
-        <span>
+        </button>
+        <button className="flag" id="es" onClick={handleClick}>
           <img src="../../assets/spain-icon.png" alt="Spanish Flag" />
-        </span>
+        </button>
       </div>
-      <div className="text-container">Idioma Selecionado: Português</div>
+      <div className="text-container">
+        {config.dictionaryList[config.lang].langSelector}
+      </div>
     </div>
   )
 }

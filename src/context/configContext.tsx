@@ -1,5 +1,5 @@
 import { useState, createContext } from "react"
-import { IConfig, ConfigContextType } from "../types/config"
+import { IConfig, ConfigContextType, dictionaryList } from "../types/config"
 
 export const ConfigContext = createContext<ConfigContextType | null>(null)
 
@@ -9,8 +9,9 @@ type Props = {
 
 const ConfigProvider: React.FC<Props> = ({ children }) => {
   const [config, setConfig] = useState<IConfig>({
-    lang: "PT-BR",
+    lang: "ptBr",
     temp: "C",
+    dictionaryList: dictionaryList,
   })
 
   const setLang = (lang: string) => {
