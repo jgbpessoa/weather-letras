@@ -1,59 +1,94 @@
 .toggle {
   display: grid;
-  gap: 4px;
-  grid-template-columns: 20px 50px 20px;
+  gap: 0.25rem;
+  grid-template-columns: auto auto auto;
   border: none;
   margin: 0;
   align-items: center;
   justify-content: end;
-  margin-top: 43px;
-  margin-right: 40px;
+  margin-top: 0.8125rem;
+  margin-right: 0.625rem;
 }
 
 .toggle label {
-  font-size: 15px;
+  font-size: 0.75rem;
   font-weight: 400;
   color: var(--toggle-color);
-  margin-left: 2px;
 }
 
 .toggle__wrapper {
   position: relative;
-  height: 30px;
-  width: 50px;
+  height: 1.25rem;
+  width: 2.5rem;
 }
 
 .toggle input[type="radio"] {
   opacity: 0;
-  width: 25px;
-  height: 30px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .toggle__background {
   display: block;
   height: 100%;
   position: absolute;
-  width: 50px;
-  height: 30px;
+  width: 2.5rem;
+  height: 1.25rem;
   top: 0;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: var(--toggle-bg-f);
   pointer-events: none;
 }
 .toggle__button {
   position: absolute;
-  left: 5px;
-  top: 5px;
+  left: 0.3125rem;
+  top: 0.1875rem;
   right: 100%;
-  width: 20px;
-  height: 20px;
+  width: 0.875rem;
+  height: 0.875rem;
   border-radius: 50%;
   background-color: var(--toggle-color);
   transition: all 150ms ease-in-out;
 }
 .toggle #celsius:checked ~ .toggle__button {
-  left: 25px;
+  left: 1.25rem;
 }
 .toggle #celsius:checked ~ .toggle__background {
   background: var(--toggle-bg-c);
+}
+
+@media (min-width: 37.5rem) {
+  .toggle {
+    margin-top: 2.6875rem;
+    margin-right: 2.5rem;
+  }
+
+  .toggle label {
+    font-size: 0.9375rem;
+    margin-left: 0.0625rem;
+    margin-right: 0.0625rem;
+  }
+
+  .toggle__wrapper {
+    height: 1.875rem;
+    width: 3.125rem;
+  }
+
+  .toggle input[type="radio"] {
+    width: 1.5625rem;
+    height: 1.875rem;
+  }
+
+  .toggle__background {
+    width: 3.125rem;
+    height: 1.875rem;
+  }
+  .toggle__button {
+    top: 0.3125rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .toggle #celsius:checked ~ .toggle__button {
+    left: 1.5625rem;
+  }
 }
