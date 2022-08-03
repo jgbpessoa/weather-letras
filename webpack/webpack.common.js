@@ -46,7 +46,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env": {
-        API_KEY: JSON.stringify("bf1c2f5493084d529a17be7458b36aac"),
+        API_KEY_AUTO: JSON.stringify("bf1c2f5493084d529a17be7458b36aac"),
+        API_KEY_WEATHER: JSON.stringify("da5bb508f7ec21c64d6814afe18d8346"),
       },
     }),
   ],

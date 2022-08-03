@@ -18,7 +18,6 @@ const SearchWeather: React.FC = () => {
       const autocomplete = async (city: string, lang: string) => {
         try {
           const cities = await getAutocomplete(city, lang)
-          console.log(cities)
           setCities(cities)
           if (searchBar.current !== null) {
             searchBar.current.classList.add("search-bar-active")
@@ -62,7 +61,7 @@ const SearchWeather: React.FC = () => {
     setCity(e.currentTarget.value)
   }
   return (
-    <div className="container-search">
+    <div className="container">
       <h2 className="main-title" ref={mainTitle}>
         {config.dictionaryList[config.lang].searchWeatherTitle}
       </h2>
@@ -78,9 +77,13 @@ const SearchWeather: React.FC = () => {
       />
       {cities.length > 0 && (
         <div className="container-autocomplete">
-          {cities.map((city, index) => (
-            <div key={index} className="container-link">
-              <Link className="link" to={`/${city.properties.city}`}>
+          {cities.map((city) => (
+            <div key={city.properties.place_id} className="container-link">
+              <Link
+                className="link"
+                state={city}
+                to={`/lon${city.properties.lon}lat${city.properties.lat}`}
+              >
                 {city.properties.city || city.properties.county},{" "}
                 {city.properties.state}, {city.properties.country}
               </Link>

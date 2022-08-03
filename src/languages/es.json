@@ -1,5 +1,6 @@
 {
   "langSelector": "Idioma seleccionado: Español",
   "searchWeatherTitle": "¿Qué tiempo hace hoy?",
-  "searchWeatherPlaceholder": "Escriba el nombre de su ciudad"
+  "searchWeatherPlaceholder": "Escriba el nombre de su ciudad",
+  "forecastLink": "Ver previsión para los próximos 5 días"
 }

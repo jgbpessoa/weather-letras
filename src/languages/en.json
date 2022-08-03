@@ -1,5 +1,6 @@
 {
   "langSelector": "Selected language: English",
   "searchWeatherTitle": "How is the weather today?",
-  "searchWeatherPlaceholder": "Type the name of your city"
+  "searchWeatherPlaceholder": "Type the name of your city",
+  "forecastLink": "See forecast for the next 5 days"
 }
