@@ -1,22 +1,28 @@
-# ReactTest Ploomes - jgbpessoa
+# Desafio Prático Frontend Letras - jgbpessoa
 
-Desafio: Converter uma aplicação AngularJS em React
+O intuito desse desafio é identificar o clima da cidade pesquisada através do Open Wheater. Lembrando que será necessário criar uma conta e uma API_KEY para conseguir consumir a API.
+Lembrete: Você terá uma semana para realizar o desafio a partir da data de envio.
 
-## Objetivo
+## Prints do App em comparação com Layout do Figma
 
-O objetivo desse desafio é avaliar a capacidade de aprendizado de uma tecnologia legada (AngularJS) e a capacidade de mapeamento e conversão da aplicação para uma tecnologia moderna (React).
+![Versão Desktop do App](./README-img/App-Desktop.png)
+![Versão Desktop do Figma](./README-img/Figma-Desktop.png)
+![Versão Celular do App](./README-img/App-Celular.png)
+![Versão Celular do Fgma](./README-img/Figma-Celular.png)
 
-## Requisitos realizados
+## Regras e Funcionalidades Concluídas
 
-- [x] Criar um repositório público baseado no repositório base acima
-- [x] Converter a aplicação de AngularJS para React, mantendo as funcionalidades presentes na aplicação original
-- [x] Documentar o passo a passo do processo usando commits bem escritos EM INGLÊS
-- [x] Quebrar a aplicação em componentes reutilizáveis, usando boas práticas de estrutura de código e pastas
-- [x] Adicionar a funcionalidade de desconto percentual em cada produto
-- [x] Criar um script em Webpack para rodar o servidor localmente e fazer uma build para produção
-- [x] Descrever os scripts da aplicação em um arquivo README.md
-- [x] Transpor toda a aplicação para [Typescript](https://www.typescriptlang.org/)
-- [x] Adicionar a funcionalidade de conversão de valores por moedas (puxando de alguma API a taxa de câmbio)
+- [x] Para carregar o select com os lugares, encorajamos utilizar a API do Google Places ou similar (Utilizei a API do Geoapify por ter mais familiaridade).
+- [x] Os dados deverão ser printados na tela de acordo com o que vem da API.
+- [x] Tratamento de erros (try catch).
+- [x] Tratar internacionalização para inglês/espanhol (Todo o app está 100% funcional nas três línguas - ContextApi).
+- [x] Tratar escolha de escala de grau: Celsius ou Fahrenheit (Todo o app está 100% funcional nas duas escalas - ContextApi).
+- [x] Previsão do tempo para os próximos 5 dias.
+
+### Extras
+
+- [x] Toda a aplicação foi escrita em [Typescript](https://www.typescriptlang.org/)
+- [x] Implementei um workflow do Webpack para checar regras do eslint, configs do prettier e rodar tanto em ambiente de development quanto production. Seguem os scripts abaixo:
 
 ## scripts
 
