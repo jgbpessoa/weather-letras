@@ -75,6 +75,7 @@ const SearchWeather: React.FC = () => {
           config.dictionaryList[config.lang].searchWeatherPlaceholder
         }
       />
+
       {cities.length > 0 && (
         <div className="container-autocomplete">
           {cities.map((city) => (

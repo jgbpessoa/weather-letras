@@ -10,6 +10,7 @@ import {
 } from "../../types/API"
 import { ConfigContextType } from "../../types/config"
 import { getForecast } from "../../util/APIutil"
+import LoadLocation from "../../components/LoadLocation"
 
 const ForecastWeather: React.FC = () => {
   const { config } = useContext(ConfigContext) as ConfigContextType
@@ -29,6 +30,7 @@ const ForecastWeather: React.FC = () => {
     ) => {
       try {
         const forecast = await getForecast(lon, lat, lang, units)
+        console.log(forecast)
         const nextDays = nextFiveDays(forecast)
         setForecastWeather(nextDays)
         setLoading(false)
@@ -59,7 +61,7 @@ const ForecastWeather: React.FC = () => {
   return (
     <div className="container">
       {loading ? (
-        <p>Loading...</p>
+        <LoadLocation />
       ) : (
         <>
           <h1 className="title">

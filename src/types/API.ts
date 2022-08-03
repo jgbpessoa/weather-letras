@@ -68,16 +68,43 @@ const getTempMaxMin = (list: IForecastWeather["list"]) => {
 }
 
 export const nextFiveDays = (forecastWeather: IForecastWeather) => {
+  // Percebi que dependendo do horário do dia a resposta da API muda. Dessa forma, criei uma lógica para checar se a API ainda esté mandando dados de hoje ou se já está enviando dados com a data de amanhã
+
   const forecastList = [...forecastWeather.list]
-  const today = forecastList[0].dt_txt.split(" ")[0]
-  const restOfTheDays = forecastList.filter(
-    (forecast) => !forecast.dt_txt.includes(today)
-  )
-  const day1Forecasts = restOfTheDays.splice(0, 8)
-  const day2Forecasts = restOfTheDays.splice(0, 8)
-  const day3Forecasts = restOfTheDays.splice(0, 8)
-  const day4Forecasts = restOfTheDays.splice(0, 8)
-  const day5Forecasts = restOfTheDays
+  const todaySystem = new Date()
+  const todayAPI = forecastList[0].dt_txt
+  const todayAPIDate = new Date(todayAPI)
+
+  let day1Forecasts,
+    day2Forecasts,
+    day3Forecasts,
+    day4Forecasts,
+    day5Forecasts,
+    restOfTheDays
+
+  if (todaySystem.getDate() === todayAPIDate.getDate()) {
+    restOfTheDays = forecastList.filter(
+      (forecast) => !forecast.dt_txt.includes(todayAPI.split("")[0])
+    )
+
+    day1Forecasts = restOfTheDays.splice(0, 8)
+    day2Forecasts = restOfTheDays.splice(0, 8)
+    day3Forecasts = restOfTheDays.splice(0, 8)
+    day4Forecasts = restOfTheDays.splice(0, 8)
+    day5Forecasts = restOfTheDays
+  } else {
+    day1Forecasts = forecastList.filter((forecast) =>
+      forecast.dt_txt.includes(todayAPI.split(" ")[0])
+    )
+    restOfTheDays = forecastList.filter(
+      (forecast) => !forecast.dt_txt.includes(todayAPI.split(" ")[0])
+    )
+
+    day2Forecasts = restOfTheDays.splice(0, 8)
+    day3Forecasts = restOfTheDays.splice(0, 8)
+    day4Forecasts = restOfTheDays.splice(0, 8)
+    day5Forecasts = restOfTheDays
+  }
 
   forecastWeather.list[0] = getTempMaxMin(day1Forecasts)
   forecastWeather.list[1] = getTempMaxMin(day2Forecasts)

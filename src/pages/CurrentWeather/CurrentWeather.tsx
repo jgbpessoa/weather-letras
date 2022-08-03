@@ -8,6 +8,7 @@ import {
 import { ConfigContext } from "../../context/configContext"
 import { ConfigContextType } from "../../types/config"
 import { getCurrent } from "../../util/APIutil"
+import LoadLocation from "../../components/LoadLocation"
 import "./styles.css"
 
 const CurrentWeather: React.FC = () => {
@@ -58,7 +59,7 @@ const CurrentWeather: React.FC = () => {
   return (
     <div className="container container-current">
       {loading ? (
-        <p>Loading...</p>
+        <LoadLocation />
       ) : (
         <>
           <h1 className="title">
