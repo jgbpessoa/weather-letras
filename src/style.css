@@ -11,6 +11,8 @@
   --widget-color: rgba(255, 255, 255, 1);
   --back-btn-color: rgba(255, 255, 255, 1);
   --primary-font: "Montserrat", sans-serif;
+  --temp-gradient-start: rgba(181, 198, 155, 1);
+  --temp-gradient-end: rgba(224, 151, 42, 0.53);
 }
 
 /* Background */

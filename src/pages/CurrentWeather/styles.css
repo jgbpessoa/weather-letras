@@ -1,9 +1,14 @@
+.container-current {
+  margin-top: 0.625rem;
+}
+
 .title {
   font-size: 1.8125rem;
   letter-spacing: 0.25375rem;
   line-height: 2.1875rem;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .description {
@@ -37,11 +42,15 @@
 }
 
 .forecast-link {
-  position: absolute;
-  top: 10rem;
+  text-decoration: none;
+  margin-top: 0.625rem;
   color: var(--text-color);
   font-size: 0.75rem;
   line-height: 0.875rem;
+}
+
+.forecast-link:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 48rem) {
@@ -70,10 +79,11 @@
   }
 
   .forecast-link {
-    position: absolute;
-    top: 14.6875rem;
-    color: var(--text-color);
-    font-size: 0.75rem;
-    line-height: 0.875rem;
+    margin-top: 1.25rem;
+    line-height: 1.0625rem;
+  }
+
+  .container-current {
+    margin-top: 1.25rem;
   }
 }

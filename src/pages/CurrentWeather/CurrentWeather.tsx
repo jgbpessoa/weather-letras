@@ -56,7 +56,7 @@ const CurrentWeather: React.FC = () => {
   }, [city, config.lang, config.temp])
 
   return (
-    <div className="container">
+    <div className="container container-current">
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -87,6 +87,7 @@ const CurrentWeather: React.FC = () => {
             </p>
           </div>
           <Link
+            state={city}
             className="forecast-link"
             to={`/lon${city.properties.lon}lat${city.properties.lat}/forecast`}
           >

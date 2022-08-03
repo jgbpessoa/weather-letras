@@ -27,3 +27,65 @@ export const initialCurrentWeather = {
     temp_max: 0,
   },
 }
+
+export interface IForecastWeather {
+  list: {
+    dt: number
+    main: {
+      temp: number
+      temp_min: number
+      temp_max: number
+    }
+    weather: { id: number; description: string; icon: string }[]
+    dt_txt: string
+  }[]
+}
+
+export const initialForecastWeather = {
+  list: [
+    {
+      dt: 0,
+      main: {
+        temp: 0,
+        temp_min: 0,
+        temp_max: 0,
+      },
+      weather: [{ id: 0, description: "", icon: "" }],
+      dt_txt: "",
+    },
+  ],
+}
+
+const getTempMaxMin = (list: IForecastWeather["list"]) => {
+  const tempsMax = list.map((forecast) => forecast.main.temp_max)
+  const tempsMin = list.map((forecast) => forecast.main.temp_min)
+
+  // Coloquei a segunda previsao do dia como padrão para descrição e icon
+  list[1].main.temp_max = Math.max.apply(null, tempsMax)
+  list[1].main.temp_min = Math.min.apply(null, tempsMin)
+
+  return list[1]
+}
+
+export const nextFiveDays = (forecastWeather: IForecastWeather) => {
+  const forecastList = [...forecastWeather.list]
+  const today = forecastList[0].dt_txt.split(" ")[0]
+  const restOfTheDays = forecastList.filter(
+    (forecast) => !forecast.dt_txt.includes(today)
+  )
+  const day1Forecasts = restOfTheDays.splice(0, 8)
+  const day2Forecasts = restOfTheDays.splice(0, 8)
+  const day3Forecasts = restOfTheDays.splice(0, 8)
+  const day4Forecasts = restOfTheDays.splice(0, 8)
+  const day5Forecasts = restOfTheDays
+
+  forecastWeather.list[0] = getTempMaxMin(day1Forecasts)
+  forecastWeather.list[1] = getTempMaxMin(day2Forecasts)
+  forecastWeather.list[2] = getTempMaxMin(day3Forecasts)
+  forecastWeather.list[3] = getTempMaxMin(day4Forecasts)
+  forecastWeather.list[4] = getTempMaxMin(day5Forecasts)
+
+  forecastWeather.list.splice(5)
+
+  return forecastWeather
+}
