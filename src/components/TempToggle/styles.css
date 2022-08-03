@@ -1,4 +1,7 @@
 .toggle {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
   display: grid;
   gap: 0.25rem;
   grid-template-columns: auto auto auto;
@@ -6,8 +9,7 @@
   margin: 0;
   align-items: center;
   justify-content: end;
-  margin-top: 0.8125rem;
-  margin-right: 0.625rem;
+  padding: 0;
 }
 
 .toggle label {
@@ -59,8 +61,8 @@
 
 @media (min-width: 48rem) {
   .toggle {
-    margin-top: 2.6875rem;
-    margin-right: 2.5rem;
+    top: 3.125rem;
+    right: 3.125rem;
   }
 
   .toggle label {

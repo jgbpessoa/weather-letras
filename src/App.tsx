@@ -8,16 +8,18 @@ import TempToggle from "./components/TempToggle"
 import Footer from "./components/Footer"
 import LangSelector from "./components/LangSelector"
 import ConfigProvider from "./context/configContext"
+import BackBtn from "./components/BackBtn"
 
 function App() {
   return (
     <>
       <ConfigProvider>
         <h1 className="visually-hidden">Previsão do tempo para a sua cidade</h1>
-        <Header>
-          <TempToggle label={["°F", "°C"]} />
-        </Header>
         <Router>
+          <Header>
+            <BackBtn />
+            <TempToggle label={["°F", "°C"]} />
+          </Header>
           <Routes>
             <Route path="/" element={<SearchWeather />} />
             <Route path="/:coord" element={<CurrentWeather />} />

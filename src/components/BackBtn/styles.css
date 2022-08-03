@@ -1,0 +1,29 @@
+.btn-back {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+.btn-back img {
+  height: 24px;
+  width: 24px;
+}
+
+@media (min-width: 48rem) {
+  .btn-back {
+    top: 50px;
+    left: 50px;
+  }
+
+  .btn-back img {
+    height: 44px;
+    width: 44px;
+  }
+}
