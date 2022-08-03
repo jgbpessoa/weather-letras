@@ -1,8 +1,8 @@
-import ptBr from "../languages/ptBr.json"
+import pt from "../languages/pt.json"
 import en from "../languages/en.json"
 import es from "../languages/es.json"
 
-export const dictionaryList = { ptBr, en, es }
+export const dictionaryList = { pt, en, es }
 
 export interface IConfig {
   lang: string

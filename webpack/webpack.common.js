@@ -1,6 +1,7 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
+const webpack = require("webpack")
 module.exports = {
   entry: path.resolve(__dirname, "..", "./src/index.tsx"),
   resolve: {
@@ -42,6 +43,11 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [{ from: "src/assets", to: "assets" }],
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        API_KEY: JSON.stringify("bf1c2f5493084d529a17be7458b36aac"),
+      },
     }),
   ],
 }

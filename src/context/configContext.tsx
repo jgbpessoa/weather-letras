@@ -9,7 +9,7 @@ type Props = {
 
 const ConfigProvider: React.FC<Props> = ({ children }) => {
   const [config, setConfig] = useState<IConfig>({
-    lang: "ptBr",
+    lang: "pt",
     temp: "C",
     dictionaryList: dictionaryList,
   })
