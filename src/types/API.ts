@@ -73,7 +73,7 @@ export const nextFiveDays = (forecastWeather: IForecastWeather) => {
   const forecastList = [...forecastWeather.list]
   const todaySystem = new Date()
   const todayAPI = forecastList[0].dt_txt
-  const todayAPIDate = new Date(todayAPI)
+  const todayAPIDate = new Date(todayAPI.replace(/-/g, "/"))
 
   let day1Forecasts,
     day2Forecasts,

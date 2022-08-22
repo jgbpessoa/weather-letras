@@ -22,7 +22,7 @@ type Props = {
 
 const ForecastItem: React.FC<Props> = ({ state }) => {
   const { config } = useContext(ConfigContext) as ConfigContextType
-  const date = new Date(state.dt_txt)
+  const date = new Date(state.dt_txt.replace(/-/g, "/"))
 
   return (
     <div className="forecast-item">
