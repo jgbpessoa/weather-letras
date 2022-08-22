@@ -84,7 +84,7 @@ export const nextFiveDays = (forecastWeather: IForecastWeather) => {
 
   if (todaySystem.getDate() === todayAPIDate.getDate()) {
     restOfTheDays = forecastList.filter(
-      (forecast) => !forecast.dt_txt.includes(todayAPI.split("")[0])
+      (forecast) => !forecast.dt_txt.includes(todayAPI.split(" ")[0])
     )
 
     day1Forecasts = restOfTheDays.splice(0, 8)
