@@ -20,6 +20,8 @@
   .btn-back {
     top: 50px;
     left: 50px;
+    height: 44px;
+    width: 44px;
   }
 
   .btn-back img {
