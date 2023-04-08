@@ -14,7 +14,7 @@ const BackBtn = () => {
         ""
       ) : (
         <button className="btn-back" onClick={handleClick}>
-          <img src="../../assets/right-arrow.svg" alt="Back Button" />
+          <img src="/assets/right-arrow.svg" alt="Back Button" />
         </button>
       )}
     </>

@@ -11,11 +11,15 @@ import ConfigProvider from "./context/configContext"
 import BackBtn from "./components/BackBtn"
 
 function App() {
+  const isProduction = process.env.NODE_ENV === "production"
+  console.log(process.env.NODE_ENV)
   return (
     <>
       <ConfigProvider>
-        <h1 className="visually-hidden">Previsão do tempo para a sua cidade</h1>
-        <Router>
+        <h1 className="visually-hidden">
+          Digite o nome da cidade para obter a previsão do tempo
+        </h1>
+        <Router basename={isProduction ? "/weather-letras/" : "/"}>
           <Header>
             <BackBtn />
             <TempToggle label={["°F", "°C"]} />

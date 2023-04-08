@@ -2,6 +2,7 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
 const webpack = require("webpack")
+
 module.exports = {
   entry: path.resolve(__dirname, "..", "./src/index.tsx"),
   resolve: {
@@ -32,17 +33,12 @@ module.exports = {
       },
     ],
   },
-  output: {
-    path: path.resolve(__dirname, "..", "./build"),
-    filename: "bundle.js",
-    publicPath: "/",
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "..", "./src/index.html"),
     }),
     new CopyPlugin({
-      patterns: [{ from: "src/assets", to: "assets" }],
+      patterns: [{ from: "assets", to: "assets" }],
     }),
     new webpack.DefinePlugin({
       "process.env": {
