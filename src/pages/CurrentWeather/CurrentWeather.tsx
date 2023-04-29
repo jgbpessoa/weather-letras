@@ -90,7 +90,7 @@ const CurrentWeather: React.FC = () => {
           <Link
             state={city}
             className="forecast-link"
-            to={`/lon${city.properties.lon}lat${city.properties.lat}/forecast`}
+            to={`/${city.properties.place_id.substring(0, 10)}/forecast`}
           >
             {config.dictionaryList[config.lang].forecastLink}
           </Link>

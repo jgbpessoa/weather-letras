@@ -83,7 +83,7 @@ const SearchWeather: React.FC = () => {
               <Link
                 className="link"
                 state={city}
-                to={`/lon${city.properties.lon}lat${city.properties.lat}`}
+                to={`/${city.properties.place_id.substring(0, 10)}`}
               >
                 {city.properties.city || city.properties.county},{" "}
                 {city.properties.state}, {city.properties.country}
